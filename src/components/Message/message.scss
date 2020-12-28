@@ -1,0 +1,14 @@
+.message  {
+    display: flex;
+    align-items: center;
+    margin: .7em auto;
+    user-select: none;
+
+    &__content {
+        display: inline-block;
+        width: 100%;
+        margin-left: .5rem;
+        font-size: 1.1em;
+        color: #002329;
+    }
+}

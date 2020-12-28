@@ -1,0 +1,17 @@
+.form {
+    position: relative;
+    width: 100%;
+    &__input {
+        width: 100%;
+        padding: .5em;
+        margin: 1rem auto;
+        font-size: 1.2rem;
+        color: #002329;
+        border: none;
+        border-radius: 10px;
+        &::placeholder {
+            font-size: 1.2rem;
+            color: #00474f;
+        }
+    }
+}

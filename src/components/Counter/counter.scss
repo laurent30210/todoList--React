@@ -1,0 +1,11 @@
+.counter {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #002329;
+    &__content {
+        color: #002329;
+        font-size: 1.2em;
+        &__number {
+            font-weight: bold;
+        }
+    }
+}
