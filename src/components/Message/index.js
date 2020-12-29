@@ -7,27 +7,18 @@ import PropTypes from 'prop-types';
 import './message.scss';
 
 // == Composant
-const Message = ({ content, id, done }) => (
-  <li className="message">
-    <input
-      className="message__checkbox"
-      type="checkbox"
-      id={id}
-      defaultChecked={done}
-    />
-    <label
-      htmlFor={id}
-      className="message__content"
-    >
+const Message = ({ id, content }) => (
+  <>
+    <li id={id} className="message">
       {content}
-    </label>
-  </li>
+      <button type="button"><i className="far fa-check-circle" /></button>
+      <button type="button"><i className="far fa-trash-alt" /></button>
+    </li>
+  </>
 );
-
 Message.propTypes = {
-  content: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
-  done: PropTypes.bool.isRequired,
+  content: PropTypes.string.isRequired,
 };
 // == Export
 export default Message;

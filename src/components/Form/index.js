@@ -8,30 +8,56 @@ import PropTypes from 'prop-types';
 import './form.scss';
 
 // == Composant
-const Form = ({ onValue, onInputChange, handleSubmit }) => (
-  <form
-    className="form"
-    onSubmit={(event) => {
-      event.preventDefault();
-      handleSubmit();
-    }}
-  >
-    <input
-      className="form__input"
-      type="text"
-      placeholder="Indiquer votre tache ici"
-      value={onValue}
-      onChange={(event) => {
-        const newValue = event.target.value;
-        onInputChange(newValue);
-      }}
-    />
-  </form>
-);
+const Form = ({
+  value,
+  setValue,
+  tasks,
+  setTasks,
+  id,
+  setId,
+}) => {
+  const submitTask = (event) => {
+    event.preventDefault();
+    setId(id + 1);
+    setTasks([...tasks, {
+      id,
+      content: value,
+      done: false,
+    }]);
+    setValue('');
+  };
+
+  return (
+    <form
+      className="form"
+      onSubmit={submitTask}
+    >
+      <input
+        className="form__input"
+        type="text"
+        placeholder="Indiquer votre tache ici"
+        value={value}
+        onChange={(event) => {
+          const newValue = event.target.value;
+          setValue(newValue);
+        }}
+      />
+    </form>
+  );
+};
 Form.propTypes = {
-  onInputChange: PropTypes.func.isRequired,
-  onValue: PropTypes.string.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
+  setValue: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  setTasks: PropTypes.func.isRequired,
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      content: PropTypes.string.isRequired,
+      done: PropTypes.bool.isRequired,
+    }),
+  ).isRequired,
+  id: PropTypes.number.isRequired,
+  setId: PropTypes.func.isRequired,
 };
 // == Export
 export default Form;

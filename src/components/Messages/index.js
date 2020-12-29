@@ -10,12 +10,12 @@ import './messages.scss';
 // == Composant
 const Messages = ({ tasks }) => (
   <ul className="messages">
+    {console.log('je suis dans messages : ', tasks)}
     {tasks.map((task) => (
       <Message
         key={task.id}
-        content={task.label}
         id={task.id}
-        done={task.done}
+        content={task.content}
       />
     ))}
   </ul>
@@ -24,7 +24,7 @@ Messages.propTypes = {
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      label: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
       done: PropTypes.bool.isRequired,
     }),
   ).isRequired,
