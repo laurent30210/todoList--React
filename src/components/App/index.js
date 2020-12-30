@@ -29,6 +29,7 @@ const App = () => {
       <Counter counter={counter} />
       <Messages
         tasks={tasks}
+        setTasks={setTasks}
       />
     </div>
   );

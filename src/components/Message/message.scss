@@ -1,14 +1,39 @@
 .message  {
-    display: flex;
-    align-items: center;
-    margin: .7em auto;
+    position: relative;
+    margin: .5em auto;
+    font-size: 1.2rem;
+    padding: .7rem 5.2rem .7rem .2rem;
     user-select: none;
-
-    &__content {
-        display: inline-block;
-        width: 100%;
-        margin-left: .5rem;
-        font-size: 1.1em;
-        color: #002329;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    word-wrap: break-word;
+    overflow: hidden;
+    &::first-letter {
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        color: #000;
     }
+    &:hover > .button {
+        transform: translateY(50%);
+    }
+}
+.button {
+    position: absolute;
+    right: 0;
+    bottom: 50%;
+    transform: translateY(150%);
+    font-size: 1.1rem;
+    padding: 0 .7em;
+    border: none;
+    background-color: #fff;
+    height: 100%;
+    transition: .1s;
+    &__check {
+        right: 8%;
+        color: green;
+    }
+    &__trash {
+        color: red;
+        transition-delay: .2s;
+    }
+    
 }

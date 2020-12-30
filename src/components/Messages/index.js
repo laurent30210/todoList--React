@@ -8,7 +8,7 @@ import Message from 'src/components/Message';
 import './messages.scss';
 
 // == Composant
-const Messages = ({ tasks }) => (
+const Messages = ({ tasks, setTasks }) => (
   <ul className="messages">
     {console.log('je suis dans messages : ', tasks)}
     {tasks.map((task) => (
@@ -16,6 +16,9 @@ const Messages = ({ tasks }) => (
         key={task.id}
         id={task.id}
         content={task.content}
+        task={task}
+        setTasks={setTasks}
+        tasks={tasks}
       />
     ))}
   </ul>
@@ -28,6 +31,8 @@ Messages.propTypes = {
       done: PropTypes.bool.isRequired,
     }),
   ).isRequired,
+  setTasks: PropTypes.func.isRequired,
+
 };
 
 // == Export
