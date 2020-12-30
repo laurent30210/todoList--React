@@ -30,7 +30,7 @@ const App = () => {
       <Counter
         counter={tasksPending}
       />
-      <Messages
+      <Tasks
         tasks={tasks}
         setTasks={setTasks}
       />
