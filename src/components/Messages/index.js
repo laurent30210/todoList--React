@@ -3,16 +3,13 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import Message from 'src/components/Message';
-// == Import
-import './messages.scss';
+import Task from 'src/components/Task';
 
 // == Composant
-const Messages = ({ tasks, setTasks }) => (
-  <ul className="messages">
-    {console.log('je suis dans messages : ', tasks)}
+const Tasks = ({ tasks, setTasks }) => (
+  <ul className="Tasks">
     {tasks.map((task) => (
-      <Message
+      <Task
         key={task.id}
         id={task.id}
         content={task.content}
@@ -23,7 +20,7 @@ const Messages = ({ tasks, setTasks }) => (
     ))}
   </ul>
 );
-Messages.propTypes = {
+Tasks.propTypes = {
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -36,4 +33,4 @@ Messages.propTypes = {
 };
 
 // == Export
-export default Messages;
+export default Tasks;

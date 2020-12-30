@@ -4,10 +4,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // == Import
-import './message.scss';
+import './task.scss';
 
 // == Composant
-const Message = ({
+const Task = ({
   id,
   content,
   task,
@@ -28,7 +28,7 @@ const Message = ({
   };
   return (
     <>
-      <li id={id} className={task.done ? 'message message--completed' : 'message'}>
+      <li id={id} className={task.done ? 'task task--completed' : 'task'}>
         {content}
         <button
           type="button"
@@ -48,11 +48,11 @@ const Message = ({
     </>
   );
 };
-Message.propTypes = {
+Task.propTypes = {
   id: PropTypes.number.isRequired,
   content: PropTypes.string.isRequired,
   setTasks: PropTypes.func.isRequired,
-  task: PropTypes.func.isRequired,
+  task: PropTypes.object.isRequired,
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -62,4 +62,4 @@ Message.propTypes = {
   ).isRequired,
 };
 // == Export
-export default Message;
+export default Task;
