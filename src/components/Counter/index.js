@@ -10,7 +10,7 @@ import './counter.scss';
 // == Composant
 const Counter = ({ counter }) => (
   <div className="counter">
-    {counter < 1 ? "vous n'avez pas de tâche en cours" : `vous avez ${counter} tache en cours` }
+    <p className="counter__content"><span className="counter__content__count">{counter}</span>{counter <= 1 ? ' tâche en cours' : ' tâches en cours'}</p>
   </div>
 );
 Counter.propTypes = {

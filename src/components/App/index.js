@@ -14,7 +14,8 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
   const [value, setValue] = useState('');
   const [id, setId] = useState(0);
-  const [counter, setCounter] = useState(0);
+
+  const tasksPending = tasks.filter((task) => !task.done).length;
 
   return (
     <div className="app">
@@ -26,7 +27,9 @@ const App = () => {
         id={id}
         setId={setId}
       />
-      <Counter counter={counter} />
+      <Counter
+        counter={tasksPending}
+      />
       <Messages
         tasks={tasks}
         setTasks={setTasks}

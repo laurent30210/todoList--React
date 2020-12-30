@@ -1,6 +1,9 @@
 // eslint-disable-next-line import/prefer-default-export
+/* eslint linebreak-style: ["error", "windows"] */
+
+// eslint-disable-next-line import/prefer-default-export
 export const counterTasks = (counter) => {
-  const tasksCountContent = '';
+  let tasksCountContent = '';
   if (counter === 0) {
     tasksCountContent = "Vous n'avez pas de tâche en cours";
   }
