@@ -15,16 +15,20 @@ const Message = ({
   tasks,
 }) => {
   const finishTask = () => {
-    console.log('je suis dans finishtask :');
+    setTasks(tasks.map((taskElement) => {
+      if (taskElement.id === task.id) {
+        return { ...taskElement, done: !taskElement.done };
+      }
+      return taskElement;
+    }));
   };
   const deleteTask = () => {
-    console.log('je suis dans deletetask ');
     const newTasksArray = (tasks.filter((taskElement) => taskElement.id !== task.id));
     setTasks(newTasksArray);
   };
   return (
     <>
-      <li id={id} className="message">
+      <li id={id} className={task.done ? 'message message--completed' : 'message'}>
         {content}
         <button
           type="button"

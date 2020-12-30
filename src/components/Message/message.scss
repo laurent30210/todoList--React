@@ -15,6 +15,14 @@
     &:hover > .button {
         transform: translateY(50%);
     }
+    &--completed {
+        text-decoration: line-through;
+        font-style: italic;
+        color: #00474f;
+        &::first-letter {
+            color: #00474f;
+        }
+    }
 }
 .button {
     position: absolute;
@@ -26,7 +34,7 @@
     border: none;
     background-color: #fff;
     height: 100%;
-    transition: .1s;
+    transition: .2s;
     &__check {
         right: 8%;
         color: green;
