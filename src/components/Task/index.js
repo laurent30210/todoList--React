@@ -1,5 +1,3 @@
-/* eslint linebreak-style: ["error", "windows"] */
-
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';

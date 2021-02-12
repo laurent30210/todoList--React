@@ -1,11 +1,9 @@
-/* eslint linebreak-style: ["error", "windows"] */
-
 // == Import npm
 import React, { useState } from 'react';
 
 import Form from 'src/components/Form';
 import Counter from 'src/components/Counter';
-import Messages from 'src/components/Messages';
+import Tasks from 'src/components/Tasks';
 // == Import
 import './app.scss';
 
